@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>
+
+# Permissões
+<Files "\.(php|php\.)$">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files "/">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Segurança: Desativar a exibição de informações sobre o servidor
+ServerSignature Off
