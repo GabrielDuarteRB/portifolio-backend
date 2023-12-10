@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: About Me
+ * Plugin Name: About Me 
  */
 
 add_action( 'init', 'about_me_post_type' );
